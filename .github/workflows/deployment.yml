@@ -1,0 +1,15 @@
+name: Build 
+run-name: ${{ github.actor }} is building ${{ github.repository }}
+on: [push]
+jobs:
+  call-echo-workflow:
+    uses: lipingtababa/Internal-Developer-Platform/.github/workflows/deploy_app@main
+    with:
+      app_name: watcher-golang
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: debug
+        run: |
+            ls .
+            
