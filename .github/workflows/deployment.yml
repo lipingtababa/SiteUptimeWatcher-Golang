@@ -5,7 +5,7 @@ permissions:
     contents: read
 on: [push, workflow_dispatch]
 jobs:
-  call-echo-workflow:
+  call-idp-app-deployment-workflow:
     uses: lipingtababa/Internal-Developer-Platform/.github/workflows/deploy_app.yml@main
     with:
       app_name: watcher-golang
@@ -16,4 +16,5 @@ jobs:
       - name: debug
         run: |
             ls .
+            pwd
             
