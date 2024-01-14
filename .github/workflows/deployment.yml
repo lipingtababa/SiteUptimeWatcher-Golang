@@ -1,11 +1,15 @@
 name: Build 
 run-name: ${{ github.actor }} is building ${{ github.repository }}
-on: [push]
+permissions:
+    id-token: write
+    contents: read
+on: [push, workflow_dispatch]
 jobs:
   call-echo-workflow:
-    uses: lipingtababa/Internal-Developer-Platform/.github/workflows/deploy_app@main
+    uses: lipingtababa/Internal-Developer-Platform/.github/workflows/deploy_app.yml@main
     with:
       app_name: watcher-golang
+      stage: staging
   check:
     runs-on: ubuntu-latest
     steps:
