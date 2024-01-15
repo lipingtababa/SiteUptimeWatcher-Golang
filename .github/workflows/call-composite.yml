@@ -7,7 +7,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Hello world action step
       id: caller
-      uses: lipingtababa/actionsplayground@v1
+      uses: lipingtababa/actionsplayground@v1.1
       with:
         who-to-greet: 'Mona the Octocat'
     - name: Get the output 
